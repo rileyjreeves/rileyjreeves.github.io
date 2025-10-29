@@ -28,7 +28,7 @@ twitter_username:
 github_username:  rileyjreeves
 
 # Build settings
-remote-theme: daviddarnes/garth
+remote_theme: daviddarnes/garth
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
