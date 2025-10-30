@@ -1,6 +1,6 @@
 ---
 layout: page
 title: "Essays"
-permalink: /essays/
+permalink: /writing/essays/
 ---
 This is a place to put essays. 
