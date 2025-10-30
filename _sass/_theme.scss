@@ -174,3 +174,50 @@ video {
     overflow-x: scroll;
   }
 }
+
+// Dropdown navigation styling (added for Writing submenu)
+.list--nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+}
+
+.item--nav {
+  position: relative;
+}
+
+.subnav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: $backgroundColour;
+  padding: 0.5em 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 0.25em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  min-width: 10rem;
+}
+
+.subnav-item {
+  white-space: nowrap;
+}
+
+.subnav-item a {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: $bodyColour;
+}
+
+.subnav-item a:hover {
+  background: darken($backgroundColour, 5%);
+}
+
+.item--nav:hover > .subnav {
+  display: flex;
+}
