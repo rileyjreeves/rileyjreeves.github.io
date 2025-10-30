@@ -1,26 +1,28 @@
 <nav class="nav">
   <ul class="list list--nav">
-    {% for item in site.pages %}
-      {% unless item.title == false or item.title == "" or item.url contains "/page" or item.url contains "/404.html" or item.url contains "/feed." %}
-        {% assign children = site.pages | where: "parent", item.title %}
+    {%- assign main_pages = site.pages | where_exp:"p","p.parent == nil and p.title and p.title != false" -%}
+    {%- for item in main_pages -%}
+      {%- unless item.url contains "/404.html" or item.url contains "/feed." or item.url contains "/page" -%}
+
+        {%- assign children = site.pages | where: "parent", item.title -%}
+
         <li class="item item--nav{% if item.url == page.url %} item--current{% endif %}">
-          
-          {% if item.collectionpage %}
-            {% assign collectiondata = site.collections | where: "label", item.collectionpage | first %}
-            <a href="{{ site.baseurl }}{{ item.url }}">{{ collectiondata.title }}</a>
-          {% else %}
-            <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-          {% endif %}
-          
-          {% if children and children != empty %}
+          <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+
+          {%- if children and children != empty -%}
             <ul class="subnav">
-              {% for child in children %}
-                <li><a href="{{ site.baseurl }}{{ child.url }}">{{ child.title }}</a></li>
-              {% endfor %}
+              {%- for child in children -%}
+                {%- unless child.title == false or child.title == "" -%}
+                  <li class="subnav-item">
+                    <a href="{{ site.baseurl }}{{ child.url }}">{{ child.title }}</a>
+                  </li>
+                {%- endunless -%}
+              {%- endfor -%}
             </ul>
-          {% endif %}
+          {%- endif -%}
         </li>
-      {% endunless %}
-    {% endfor %}
+
+      {%- endunless -%}
+    {%- endfor -%}
   </ul>
 </nav>
