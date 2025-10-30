@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "POETRY"
-permalink: /POETRY/
+title: "poetry"
+permalink: /poetry/
 ---
 
 Testing adding a poetry page to the website.
