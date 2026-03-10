@@ -1,9 +1,9 @@
 ---
 layout: page
-title: poetry
+title: Poetry
 nav: false
 permalink: /writing/poetry/
-categories: poetry
+category: poetry
 ---
 
 <ul class="list list--posts">
@@ -15,9 +15,7 @@ categories: poetry
             {{ post.title }}
           </a>
         </h2>
-
         {% include post-meta.html %}
-
         {{ post.excerpt | markdownify | truncatewords: 60 }}
       </article>
     </li>
