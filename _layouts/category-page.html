@@ -1,0 +1,31 @@
+---
+layout: page
+---
+
+<article class="article article--page typeset">
+  <h1>{{ page.title }}</h1>
+
+  {% if page.description %}
+    {{ page.description | markdownify }}
+  {% endif %}
+</article>
+
+{% if page.category and site.categories[page.category] %}
+  <ul class="list list--posts">
+    {% for post in site.categories[page.category] %}
+      <li class="item item--post">
+        <article class="article article--post typeset">
+          <h2>
+            <a href="{{ site.baseurl }}{{ post.url }}">
+              {{ post.title }}
+            </a>
+          </h2>
+
+          {% include post-meta.html %}
+
+          {{ post.excerpt | truncatewords: 60 }}
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
