@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Nature"
+title: false
 permalink: /nature/
 ---
 
