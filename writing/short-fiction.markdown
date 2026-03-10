@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Short Fiction"
+title: false
 permalink: /writing/short-fiction/
 ---
 Place to put short fiction.
