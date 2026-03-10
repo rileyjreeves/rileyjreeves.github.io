@@ -1,5 +1,6 @@
 ---
 layout: page 
-title: false
+title: journal
+nav: false
 permalink: /writing/journal
 ---
