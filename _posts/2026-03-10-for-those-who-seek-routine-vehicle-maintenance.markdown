@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "For Those Who Seek Routine Vehicle Maintenance" 
-date:   2026-03-28 14:27:16 -0400
+date:   2026-03-10 14:27:16 -0400
 categories: poetry
 ---
 I lost years of my life   
